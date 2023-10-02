@@ -1,0 +1,132 @@
+nav {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 99999;
+
+    .navbar {
+        margin: 0 40px;
+        width: auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        // Navbar Logo
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                text-decoration: none;
+            }
+
+            h1 {
+                color: var(--title_color);
+
+                span {
+                    color: var(--text_color);
+                }
+            }
+        }
+
+        // Navbar Links
+        .navbar-links {
+            display: flex;
+            align-items: center;
+
+            .navbar-link {
+                text-decoration: none;
+                color: var(--text_color);
+                padding: 10px 15px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background-color: var(--text_color);
+                    left: 0;
+                    bottom: 0;
+                    transform-origin: left;
+                    transition: width .4s ease;
+                    transform: scaleY(1.1);
+                    border-radius: 6px;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: var(--text_color);
+                    left: 0;
+                    bottom: 0;
+                    transform-origin: left;
+                    transition: opacity .1s ease-in;
+                    transform: scaleY(1.1);
+                    opacity: 0;
+                    border-radius: 6px;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                    transform: scaleY(1);
+                    border-radius: 0;
+                }
+
+                &:hover::before {
+                    transition-delay: .4s;
+                    opacity: 1;
+                }
+
+                &.active::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        // Navbar Interactions
+        .navbar-interactions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                cursor: pointer;
+                outline: none;
+                border: 2px solid var(--text_color);
+                background-color: transparent;
+            }
+
+            .navbar-toggle-theme {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 15px;
+
+                svg {
+                    color: var(--text_color);
+                    padding: 5px;
+                    font-size: 1.1rem;
+                }
+            }
+
+            .join-button {
+                width: 180px;
+                height: 40px;
+                border-radius: 20px;
+                text-transform: uppercase;
+                color: var(--text_color);
+                transition: background-color .4s ease, color .4s ease;
+
+                &:hover {
+                    background-color: var(--text_color) !important;
+                    color: var(--title_color) !important;
+                }
+            }
+        }
+    }
+}
