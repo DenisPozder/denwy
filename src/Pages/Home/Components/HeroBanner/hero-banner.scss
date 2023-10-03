@@ -1,0 +1,83 @@
+.hero-banner {
+    width: 100%;
+    height: 100vh;
+
+    .hero-banner-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-banner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, var(--background), transparent), linear-gradient(to top, var(--background), transparent 30%);
+
+        .hero-banner-content {
+            position: relative;
+            width: auto;
+            height: 100%;
+            margin: 0 40px;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+
+            .hero-banner-logo {
+                height: 140px;
+            }
+
+            .hero-banner-desc {
+                margin: 1.5rem 0;
+                max-width: 40%;
+            }
+
+            .hero-banner-btns {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .hero-banner-btn {
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 5px 10px;
+                    border-radius: 6px;
+
+                    svg {
+                        font-size: 2.4rem;
+                        margin-right: 1rem;
+                    }
+                }
+
+                .hero-banner-play {
+                    margin-right: 1rem;
+                    background-color: var(--buttons);
+                    color: var(--text_color);
+                    transition: color .3s ease, background-color .3s ease;
+
+                    &:hover {
+                        background-color: var(--text_color);
+                        color: var(--buttons);
+                    }
+                }
+
+                .hero-banner-info {
+                    color: var(--buttons);
+                    background-color: var(--title_color);
+                    transition: color .3s ease;
+
+                    &:hover {
+                        color: var(--text_color);
+                    }
+                }
+            }
+        }
+    }
+}

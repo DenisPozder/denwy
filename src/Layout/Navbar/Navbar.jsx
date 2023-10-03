@@ -2,7 +2,7 @@ import React from 'react'
 import './navbar.scss'
 import { useDarkMode } from '../../Contexts/DarkTheme'
 import { Link, NavLink } from 'react-router-dom'
-import { BsCircleHalf } from 'react-icons/bs'
+import { BsCircleHalf, BsSearch } from 'react-icons/bs'
 
 const Navbar = () => {
 
